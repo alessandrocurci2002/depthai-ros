@@ -207,7 +207,7 @@ def launch_setup(context, *args, **kwargs):
             name=f"{name}_container",
             namespace=namespace,
             package="rclcpp_components",
-            executable="component_container",
+            executable="component_container_mt",
             composable_node_descriptions=[
                 ComposableNode(
                     package="depthai_ros_driver_v3",

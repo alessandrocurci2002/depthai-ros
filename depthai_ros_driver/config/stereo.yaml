@@ -1,0 +1,36 @@
+/oak:
+  ros__parameters:
+    pipeline_gen:
+      i_pipeline_type: 'RGBD'
+    
+    imu:
+      i_enable_rotation: false
+      i_sync_method: COPY
+      i_acc_freq: 400
+      i_gyro_freq: 400
+      i_batch_report_threshold: 1
+      i_max_batch_reports: 10
+      i_enable_mag: false
+
+    left:
+      i_disable_node: false
+      i_simulate_from_topic: false
+      i_publish_topic: true
+      i_low_bandwidth: false
+      i_max_q_size: 10
+      i_fps: 30.0
+      
+    right:
+      i_disable_node: false
+      i_simulate_from_topic: false
+      i_publish_topic: true
+      i_low_bandwidth: false
+      i_max_q_size: 10
+      i_fps: 30.0
+
+    stereo:
+      i_right_rect_publish_topic : true
+      i_left_rect_publish_topic : true
+      i_left_rect_synced: true
+      i_right_rect_synced: true  
+      i_fps: 30.0    
