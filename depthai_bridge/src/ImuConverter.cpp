@@ -29,25 +29,32 @@ ImuConverter::ImuConverter(const std::string& frameName,
 
 ImuConverter::~ImuConverter() = default;
 
+// void ImuConverter::fillImuMsg(ImuMsgs::Imu& msg, dai::IMUReportAccelerometer report) {
+//     msg.linear_acceleration.x = 0.0*report.x;
+//     msg.linear_acceleration.y = -0.0*report.y; // -> flip
+//     msg.linear_acceleration.z = 0.0*report.z+9.81;
+//     msg.linear_acceleration_covariance = {linear_accel_cov, 0.0, 0.0, 0.0, linear_accel_cov, 0.0, 0.0, 0.0, linear_accel_cov};
+// }
+
 void ImuConverter::fillImuMsg(ImuMsgs::Imu& msg, dai::IMUReportAccelerometer report) {
     msg.linear_acceleration.x = report.x;
-    msg.linear_acceleration.y = report.y;
+    msg.linear_acceleration.y = report.y; 
     msg.linear_acceleration.z = report.z;
     msg.linear_acceleration_covariance = {linear_accel_cov, 0.0, 0.0, 0.0, linear_accel_cov, 0.0, 0.0, 0.0, linear_accel_cov};
 }
 
 void ImuConverter::fillImuMsg(ImuMsgs::Imu& msg, dai::IMUReportGyroscope report) {
     msg.angular_velocity.x = report.x;
-    msg.angular_velocity.y = report.y;
+    msg.angular_velocity.y = report.y; 
     msg.angular_velocity.z = report.z;
     msg.angular_velocity_covariance = {angular_velocity_cov, 0.0, 0.0, 0.0, angular_velocity_cov, 0.0, 0.0, 0.0, angular_velocity_cov};
 }
 
 void ImuConverter::fillImuMsg(ImuMsgs::Imu& msg, dai::IMUReportRotationVectorWAcc report) {
     if(enable_rotation) {
-        msg.orientation.x = report.i;
+        msg.orientation.x = report.i; 
         msg.orientation.y = report.j;
-        msg.orientation.z = report.k;
+        msg.orientation.z = report.k; 
         msg.orientation.w = report.real;
         msg.orientation_covariance = {rotation_cov, 0.0, 0.0, 0.0, rotation_cov, 0.0, 0.0, 0.0, rotation_cov};
     } else {
@@ -77,7 +84,7 @@ void ImuConverter::fillImuMsg(depthai_ros_msgs_v3::msg::ImuWithMagneticField& ms
 
 void ImuConverter::fillImuMsg(depthai_ros_msgs_v3::msg::ImuWithMagneticField& msg, dai::IMUReportMagneticField report) {
     msg.field.magnetic_field.x = report.x;
-    msg.field.magnetic_field.y = report.y;
+    msg.field.magnetic_field.y = report.y; 
     msg.field.magnetic_field.z = report.z;
     msg.field.magnetic_field_covariance = {magnetic_field_cov, 0.0, 0.0, 0.0, magnetic_field_cov, 0.0, 0.0, 0.0, magnetic_field_cov};
 }
