@@ -1,0 +1,4 @@
+[submodule "calibration"]
+    path   = depthai-ws/src/depthai-ros/calibration
+    url    = https://github.com/ethz-asl/kalibr.git
+    branch = master

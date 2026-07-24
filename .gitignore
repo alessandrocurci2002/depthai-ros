@@ -4,3 +4,7 @@ __pycache__
 build
 .DS_Store
 *.blob
+
+
+#rosbag
+*.bag

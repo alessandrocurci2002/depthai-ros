@@ -5,7 +5,7 @@
     
     imu:
       i_enable_rotation: false
-      i_sync_method: "LINEAR_INTERPOLATE_ACCEL"
+      i_sync_method: LINEAR_INTERPOLATE_ACCEL
       i_acc_freq: 200
       i_gyro_freq: 200
       i_batch_report_threshold: 1
