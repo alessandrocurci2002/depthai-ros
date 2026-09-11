@@ -1,5 +1,0 @@
-target_type: 'aprilgrid' # grid type
-tagCols: 6 
-tagRows: 6
-tagSize: 0.03432 # tag size in meters
-tagSpacing: 0.3 # 

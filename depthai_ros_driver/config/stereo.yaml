@@ -18,24 +18,23 @@
       i_disable_node: false
       i_simulate_from_topic: false
       i_publish_topic: true
-      i_low_bandwidth: false
+      i_low_bandwidth: true
       i_max_q_size: 10
-      i_fps: 60.0
+      i_fps: 30.0
       
     right:
       i_disable_node: false
       i_simulate_from_topic: false
       i_publish_topic: true
-      i_low_bandwidth: false
+      i_low_bandwidth: true
       i_max_q_size: 10
-      i_fps: 60.0
+      i_fps: 30.0
 
     stereo:
       i_right_rect_publish_topic : true
       i_left_rect_publish_topic : true
-      i_left_rect_synced: true
-      i_right_rect_synced: true  
-      i_fps: 60.0    
-
+    
     driver:
       i_publish_tf_from_calibration: true
+      r_laser_dot_intensity: 0.0
+      r_floodlight_intensity: 0.6 
